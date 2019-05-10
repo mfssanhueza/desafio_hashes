@@ -17,22 +17,25 @@ inventario = {Notebook: 4, Pc_escritorio: 6, Router: 10, Impresora: 6}
 
 option = 1
 while option >= 1 && option < 7 do
-    puts "Seleccione una opción del menú:\n Ingrese 1 para agregar al stock\n Ingrese 2 para eliminar ítem\n Ingrese 3 para actualizar información\n Ingrese 4 para ver stock total\n Ingrese 5 para ver el ítem con mayor stock\n Ingrese 6 para preguntar si un artículo está en stock\n Ingrese 7 para salir"
+    puts "Seleccione una opción del menú:\n Ingrese 1 para agregar un nuevo artículo al stock\n Ingrese 2 para eliminar un artículo\n Ingrese 3 para actualizar información de artículo o de stock\n Ingrese 4 para ver stock total\n Ingrese 5 para ver el artículo con mayor stock\n Ingrese 6 para preguntar si un artículo está en stock\n Ingrese 7 para salir"
     option = gets.chomp.to_i
     arr_stock = []
     arr_ele = []
     if option == 1
+        puts "el inventario actual es #{inventario}"
         puts 'Ingrese nuevo producto y su stock (Ejemplo: Pc_escritorio, 500)'
         input = gets.chomp.downcase.capitalize
         a = input.split(', ')
         inventario[a[0].to_sym] = a[1].to_i
         puts inventario
     elsif option == 2
+        puts "el inventario actual es #{inventario}"
         puts 'Ingrese el nombre del ítem que quiere eliminar'
         input = gets.chomp.downcase.capitalize.to_sym
         inventario.delete(input)
         puts inventario
     elsif option == 3
+        puts "el inventario actual es #{inventario}"
         puts '¿Desea editar el nombre de un artículo? (s/n)'
         input = gets.chomp.downcase
         if input == 's'
